@@ -1,0 +1,43 @@
+version: '3.4'
+
+services:
+
+  apigw:
+    environment:
+      - IdentityUrl=http://demo.identity.api              #Local: You need to open your local dev-machine firewall at range 5100-5110.
+      - WebSpaUrlHC=http://webspa/hc
+      - ApplicantsUrlHC=http://demo.applicants.api/hc
+      - IdentityUrlHC=http://demo.identity.api/hc             
+      - JobsUrlHC=http://demo.jobs.api/hc
+    ports: 
+    - "8085:80"
+
+  webspa:
+    ports: 
+    - "8080:80"
+    
+  demo.applicants.api:
+    ports: 
+    - "8081:80"
+    
+  demo.identity.api:
+    ports: 
+    - "8084:80"
+    environment:
+      - RedisHost=user.data:6379
+    
+  demo.jobs.api:
+    ports: 
+    - "8083:80"
+    
+  sql.data:
+   ports:
+      - "5433:1433"
+   
+  user.data:
+    image: redis
+    container_name: user.data
+
+  rabbitmq:
+    ports:
+      - "15672:15672"

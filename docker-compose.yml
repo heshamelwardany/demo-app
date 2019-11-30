@@ -7,21 +7,26 @@ services:
     build:
       context: ./web/
       dockerfile: ./Demo.WebSpa/Dockerfile
-    ports: 
-    - "8080:80"
     container_name: webspa
     depends_on:
-      - demo.applicants.api
-      - demo.identity.api
-      - demo.jobs.api
+      - apigw
+
+  apigw:
+    image: ${DOCKER_REGISTRY-}apigw
+    build:
+      context: ./apigateways/
+      dockerfile: ./Demo.ApiGateWay/Dockerfile
+    container_name: apigw
+    depends_on:
+    - demo.applicants.api
+    - demo.identity.api
+    - demo.jobs.api
 
   demo.applicants.api:
     image: ${DOCKER_REGISTRY-}demoapplicantsapi
     build:
       context: ./services/
       dockerfile: ./Demo.Applicants.Api/Dockerfile
-    ports: 
-    - "8081:80"
     container_name: applicants.api
 
   demo.identity.api:
@@ -29,8 +34,6 @@ services:
     build:
       context: ./services/
       dockerfile: ./Demo.Identity.Api/Dockerfile
-    ports: 
-    - "8084:80"
     environment:
       - RedisHost=user.data:6379
     container_name: identity.api
@@ -40,8 +43,6 @@ services:
     build:
       context: ./services/
       dockerfile: ./Demo.Jobs.Api/Dockerfile
-    ports: 
-    - "8083:80"
     container_name: jobs.api
     depends_on:
       - sql.data
@@ -51,8 +52,6 @@ services:
    build:
      context: .
      dockerfile: ./database/Dockerfile
-   ports:
-      - "5433:1433"
    container_name: mssql-linux
   
   user.data:
@@ -61,6 +60,4 @@ services:
 
   rabbitmq:
     image: rabbitmq:3-management
-    ports:
-      - "15672:15672"
     container_name: rabbitmq

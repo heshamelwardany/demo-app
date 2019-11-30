@@ -25,6 +25,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.WebSpa", "web\Demo.Web
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Identity.Api", "services\Demo.Identity.Api\Demo.Identity.Api.csproj", "{2A1E940D-8E5D-4810-9823-5E5CAACE650E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.ApiGateWay", "apigateways\Demo.ApiGateWay\Demo.ApiGateWay.csproj", "{5C53B7FB-D408-4127-8416-B7A75DB38A95}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "apigateways", "apigateways", "{7204237A-2012-4BF4-8E6F-D2F8F226DC33}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,10 @@ Global
 		{2A1E940D-8E5D-4810-9823-5E5CAACE650E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A1E940D-8E5D-4810-9823-5E5CAACE650E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A1E940D-8E5D-4810-9823-5E5CAACE650E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C53B7FB-D408-4127-8416-B7A75DB38A95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C53B7FB-D408-4127-8416-B7A75DB38A95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C53B7FB-D408-4127-8416-B7A75DB38A95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C53B7FB-D408-4127-8416-B7A75DB38A95}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +68,7 @@ Global
 		{CF861A26-6D95-4BAC-B559-4936F499D2CC} = {9D53D432-E0F7-4561-81CE-FA6514A8E8BA}
 		{100B8923-4186-44A3-AD1A-A1C22A458751} = {04F91EB9-0C46-4653-9CB8-E51F203D9DD5}
 		{2A1E940D-8E5D-4810-9823-5E5CAACE650E} = {9D53D432-E0F7-4561-81CE-FA6514A8E8BA}
+		{5C53B7FB-D408-4127-8416-B7A75DB38A95} = {7204237A-2012-4BF4-8E6F-D2F8F226DC33}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EA28E5D9-E06D-48D5-81E7-43A3DA11D76A}

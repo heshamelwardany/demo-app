@@ -2,13 +2,17 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
-    <UserSecretsId>30301f8a-eb50-45d1-8acb-d81b71221531</UserSecretsId>
+    <UserSecretsId>2c91ca42-84a9-4dfb-b8e8-c79e19cdcaa2</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..</DockerfileContext>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AspNetCore.HealthChecks.UI" Version="3.0.4" />
     <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="3.0.0" />
+    <PackageReference Include="AspNetCore.HealthChecks.Uris" Version="3.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.9.5" />
+    <PackageReference Include="Ocelot" Version="13.8.0" />
   </ItemGroup>
 
 </Project>
